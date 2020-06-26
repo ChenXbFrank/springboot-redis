@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="com.frank.cache.mapper.ArticleMapper">
+    <select id="getAllArticles" resultType="com.frank.cache.entity.Article">
+        select * from article
+    </select>
+
+    <!--resultMap-->
+    <!--如果返回map、list需要这样映射一下-->
+    <resultMap id="myArticle" type="com.frank.cache.entity.Article">
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="author" property="author" />
+        <result column="fileName" property="file_name" />
+        <result column="state" property="state" />
+    </resultMap>
+
+</mapper>
